@@ -1,0 +1,223 @@
+/*body{
+    background-color: black;
+    color: white;
+    font-family: Arial,sans-serif;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card{
+    width: 18rem;
+    background-color: rgb(171, 171, 171);
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0, 1);
+    
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0, 2);
+}
+
+.card img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card .btn{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    transition: background 0.3s ease-in-out;
+    
+}
+
+.card .btn:hover{
+    background-color: rgb(58, 59, 59);
+}
+
+@media (max-width:600px){
+    .card-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+button {
+  padding: 17px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 10px;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  letter-spacing: 3px;
+  background-color: hsl(194, 100%, 50%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(0, 110, 255) 0px 7px 29px 0px;
+}
+
+button:active {
+  letter-spacing: 3px;
+  background-color: hsl(202, 100%, 50%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(0, 204, 255) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.btn::after {
+
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  font-size: 15px;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+  top: 115%;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  transition: 0.2s linear;
+}
+
+.icon path {
+  fill: white;
+  transition: 0.2s linear;
+}
+
+.btn:hover > .icon {
+  transform: scale(1.2);
+}
+
+.btn:hover > .icon path {
+  fill: rgb(255, 0, 0);
+}
+
+.btn:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: 105%;
+}
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1; 
+}
+
+.favorite-icon .btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite-icon .icon {
+  fill: gray;
+  transition: fill 0.3s;
+}
+
+.favorite-icon .btn.favorito .icon {
+  fill: red;
+}
+
+*/
+/* Fondo general oscuro */
+.productos-section {
+  background: linear-gradient(to bottom, #1f1f1f, #2c2c2c);
+  min-height: 100vh;
+}
+
+/* Tarjeta individual */
+.product-card {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagen con tamaño fijo y corte */
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Título */
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Botón de favorito (sin fondo) */
+.fav-btn {
+  background: transparent;
+  border: none;
+}
+
+/* Texto */
+.card-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Botón de carrito */
+.btn-outline-light {
+  border-color: #ccc;
+  color: #fff;
+}
+.btn-outline-light:hover {
+  background-color: #5c5c5c;
+  color: #fff;
+}
+
+/* Responsive ajustes opcionales */
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,71 @@
+
+/* Estilos generales del Navbar */
+.navbar {
+  border-bottom: 2px solid #444; /* Sutil borde en la parte inferior */
+}
+
+/* Fondo oscuro de la Navbar */
+.navbar-dark .navbar-nav .nav-link {
+  color: #b0b0b0; /* Color gris claro para los enlaces */
+  transition: color 0.3s ease; /* Efecto de transición para hover */
+}
+
+/* Hover y estado activo */
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff; /* Blanco cuando se pasa el mouse por encima */
+  background-color: #333; /* Fondo oscuro para hover */
+  border-radius: 4px; /* Bordes redondeados en el hover */
+}
+
+/* Enlace activo */
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #fff; /* Color blanco para el enlace activo */
+  background-color: #444; /* Fondo más oscuro para el enlace activo */
+}
+
+/* Estilos del botón de búsqueda */
+.form-control {
+  border-radius: 20px; /* Bordes redondeados para el campo de búsqueda */
+  background-color: #333; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+}
+
+/* Estilo del botón de búsqueda */
+.btn-outline-light {
+  border-color: #fff; /* Borde blanco */
+  color: #fff; /* Texto blanco */
+  background-color: transparent; /* Fondo transparente */
+  border-radius: 20px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: #555; /* Fondo oscuro al hacer hover */
+  color: #fff; /* Texto blanco */
+}
+
+/* Estilo para el botón del menú */
+.navbar-toggler-icon {
+  background-color: #fff; /* Íconos blancos en el botón de menú */
+}
+
+/* Fondo oscuro para los elementos del menú */
+.navbar-dark {
+  background-color: #222; /* Fondo aún más oscuro para el navbar */
+}
+
+/* Ajustes de la barra de navegación en móviles */
+@media (max-width: 768px) {
+  .navbar-nav {
+    background-color: #333; /* Fondo oscuro en la versión móvil */
+  }
+
+  .nav-item {
+    border-bottom: 1px solid #444; /* Separadores entre los elementos del menú */
+  }
+
+  .nav-link {
+    padding: 10px 15px; /* Más espacio en los enlaces del menú */
+  }
+}

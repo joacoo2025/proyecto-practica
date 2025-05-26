@@ -1,0 +1,110 @@
+<!--<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/inicio"><i class="fa-solid fa-house"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/productos">Productos
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contacto"><i class="fa-solid fa-circle-user"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/productos"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/carrito">Carro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ofertas">Ofertas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/quien">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/favorito">Favoritos</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="search" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>-->
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/inicio" aria-label="Inicio">
+      <i class="fa-solid fa-house"></i>
+      <span class="fw-bold">Gol Autentico</span>
+    </a>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex gap-3">
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/productos']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-label="Productos">
+            Productos
+          </a>
+        </li>
+
+        
+        <li class="nav-item" title="Contacto">
+          <a class="nav-link" [routerLink]="['/contacto']" aria-label="Contacto">
+            <i class="fa-solid fa-circle-user fs-5"></i>
+          </a>
+        </li>
+
+        
+        <li class="nav-item" title="Carrito">
+          <a class="nav-link" [routerLink]="['/carrito']" aria-label="Carrito">
+            <i class="fa-solid fa-cart-shopping fs-5"></i>
+          </a>
+        </li>
+
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/ofertas']" aria-label="Ofertas">
+            Ofertas
+          </a>
+        </li>
+
+        
+        <li class="nav-item" title="Nosotros">
+          <a class="nav-link" [routerLink]="['/quien']" aria-label="Nosotros">
+            <i class="fa-solid fa-users fs-5"></i>
+          </a>
+        </li>
+
+        
+        <li class="nav-item" title="Favoritos">
+          <a class="nav-link" [routerLink]="['/favorito']" aria-label="Favoritos">
+            <i class="fa-solid fa-heart fs-5"></i>
+          </a>
+        </li>
+      </ul>
+
+      
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Buscar">
+        <button class="btn btn-outline-light" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+

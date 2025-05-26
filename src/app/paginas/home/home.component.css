@@ -1,0 +1,11 @@
+.carousel {
+  max-height: 1000px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.carousel-inner img {
+  object-fit: cover;
+  height: 100%;
+}
