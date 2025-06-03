@@ -63,7 +63,7 @@
             <td class="product-description">{{ item.producto.descripcion }}</td>
             <td class="product-price">{{ item.producto.precio | currency:'ARS':'symbol':'1.0-0' }}</td>
             <td class="product-quantity">
-              <button (click)="quitarCantidad(i)" aria-label="Disminuir cantidad" class="qty-btn">−</button>
+              <button (click)="quitarCantidad(i)" aria-label="Disminuir cantidad" class="qty-btn">-</button>
               <span class="qty-number">{{ item.cantidad }}</span>
               <button (click)="agregarCantidad(i)" aria-label="Aumentar cantidad" class="qty-btn">+</button>
             </td>
@@ -76,8 +76,14 @@
         </tbody>
       </table>
 
-      <div class="cart-footer">
+      <!--<div class="cart-footer">
         <button (click)="realizarCompra()" class="btn btn-primary btn-purchase">Realizar Compra</button>
+      </div>-->
+      <div class="text-end mt-4" *ngIf="productosEncarrito.length > 0">
+        <h4 class="fw-bold">Total:{{calcularTotal()}}</h4>
+        <button class="btn btn-primary mt-2" (click)="irAformularioCompra()">
+          <i class="bi bi-cart-check"></i>Realizar Compra
+        </button>
       </div>
     </div>
   </div>

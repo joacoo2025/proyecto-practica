@@ -4,7 +4,7 @@ import { CarritoService } from '../../servicio/carrito.service';
 import { CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-carrito',
   imports: [CurrencyPipe, CommonModule,FormsModule],
@@ -16,7 +16,7 @@ export class CarritoComponent implements OnInit{
   
     productosEncarrito:{producto:Producto;cantidad:number}[]=[]
   
-    constructor(public carritoService:CarritoService){}
+    constructor(public carritoService:CarritoService, private router: Router){}
   
     ngOnInit(): void {
       this.carritoService.carrito$.subscribe((productos)=>{
@@ -37,9 +37,15 @@ export class CarritoComponent implements OnInit{
     vaciarCarrito(){
       this.carritoService.vaciarCarrito()
     }
-    realizarCompra(){
-      alert('Compra Realizada')
-      this.vaciarCarrito()
+    
+    irAformularioCompra(){
+      this.router.navigate(['/compra'])
     }
+    calcularTotal():number{
+      return this.productosEncarrito.reduce((total,item)=>{
+        return total + item.producto.precio*item.cantidad
+      },0)
+    }
+
     
 }
