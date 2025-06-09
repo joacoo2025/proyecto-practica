@@ -61,7 +61,7 @@
 .oferta-title {
   font-size: 1.3rem;
   margin-bottom: 8px;
-  color: #00bcd4;
+  color: #435457;
   font-weight: 700;
 }
 
@@ -91,9 +91,9 @@
 .btn-oferta {
   align-self: flex-start;
   padding: 10px 20px;
-  border: 2px solid #00bcd4;
+  border: 2px solid #2f5155;
   background: transparent;
-  color: #00bcd4;
+  color: #355f64;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
@@ -101,6 +101,6 @@
 }
 
 .btn-oferta:hover {
-  background-color: #00bcd4;
+  background-color: #3e6469;
   color: #121212;
 }

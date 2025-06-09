@@ -36,16 +36,17 @@ export class CompraComponent implements OnInit{
   //metodo que se ejecuta al iniciar el componente
   ngOnInit(): void {
     //formulario con los campos requeridos y validadores
-    this.formularioCompra=this.fb.group({
-      nombre:['',Validators.required],
-      direccion:['',Validators.required],
-      correo:['',Validators.required, Validators.email],
-      telefono:['',Validators.required],
-      codigopostal:['',Validators.required],
-      ciudad:['',Validators.required],
-      provincia:['',Validators.required],
-      metodoPago:['',Validators.required],
-    })
+    this.formularioCompra = this.fb.group({
+    nombre: ['', [Validators.required]],
+    direccion: ['', [Validators.required]],
+    correo: ['', [Validators.required, Validators.email]],
+    telefono: ['', [Validators.required]],
+    codigopostal: ['', [Validators.required]],
+    ciudad: ['', [Validators.required]],
+    provincia: ['', [Validators.required]],
+    metodoPago: ['', [Validators.required]],
+});
+
   }
   //Calcular el total de la compra sumando el subtotal y el costo de envio
   calcularTotal():number{
@@ -113,7 +114,7 @@ generarPDFModal():void{
   this.pdfSrc=this.sanitizer.bypassSecurityTrustResourceUrl(URL.createObjectURL(pdfBlob))
   this.mostrarModal=true;
 }
-cerrarModel():void{
+cerrarModal():void{
   this.mostrarModal=false
   if(this.pdfSrc){
     URL.revokeObjectURL((this.pdfSrc as any ).changingThisBreaksApplicationSecurity)
@@ -127,5 +128,16 @@ imprimirPDF():void{
     iframe.contentWindow.print()
   }
 }
+
+
+
+paymentMethods = [
+    { name: '', icon: 'imagenes/visa.webp' },
+    { name: '', icon: 'imagenes/master.webp' },
+    { name: '', icon: 'imagenes/mp.webp' },
+    { name: '', icon: 'imagenes/nx.webp' },
+  ];
+
+ 
 
 }
