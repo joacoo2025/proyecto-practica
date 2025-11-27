@@ -1,0 +1,87 @@
+<div class="crud-container">
+  <h2>{{ editMode ? 'Editar item' : 'Crear item' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+
+    <!-- Nombre -->
+    <div class="form-row">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" formControlName="nombre" placeholder="Nombre del item" />
+      <div class="error" *ngIf="form.get('nombre')?.touched && form.get('nombre')?.invalid">
+        <small *ngIf="form.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
+        <small *ngIf="form.get('nombre')?.errors?.['maxlength']">Máx 50 caracteres.</small>
+      </div>
+    </div>
+
+    <!-- Descripción -->
+    <div class="form-row">
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" formControlName="descripcion" placeholder="Descripción (opcional)"></textarea>
+    </div>
+
+    <!-- Precio -->
+    <div class="form-row">
+      <label for="precio">Precio</label>
+      <input id="precio" formControlName="precio" type="number" step="0.01" placeholder="0.00" />
+      <div class="error" *ngIf="form.get('precio')?.touched && form.get('precio')?.invalid">
+        <small *ngIf="form.get('precio')?.errors?.['min']">El precio no puede ser negativo.</small>
+      </div>
+    </div>
+
+    <!-- Imagen -->
+    <div class="form-row">
+      <label for="imagen">Imagen (URL)</label>
+      <input id="imagen" formControlName="imagen" type="text" placeholder="https://..." />
+    </div>
+
+    <!-- Categoría -->
+    <div class="form-row">
+      <label for="categoria">Categoría</label>
+      <input id="categoria" formControlName="categoria" type="text" placeholder="Categoría" />
+    </div>
+
+    <!-- Cantidad -->
+    <div class="form-row">
+      <label for="cantidad">Cantidad</label>
+      <input id="cantidad" formControlName="cantidad" type="number" min="0" placeholder="0" />
+    </div>
+
+    <div class="buttons">
+      <button type="submit" [disabled]="form.invalid">{{ editMode ? 'Guardar cambios' : 'Crear' }}</button>
+      <button type="button" class="secondary" *ngIf="editMode" (click)="cancelEdit()">Cancelar</button>
+    </div>
+  </form>
+
+  <hr />
+
+  <h3>Lista de items ({{ items.length }})</h3>
+
+  <table class="items-table" *ngIf="items.length > 0; else empty">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; trackBy: trackById">
+        <td>{{ item.id }}</td>
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.descripcion }}</td>
+        <td>{{ item.precio != null ? (item.precio | number: '1.2-2') : '-' }}</td>
+        <td class="actions">
+          <button (click)="edit(item)">Editar</button>
+          <button class="danger" (click)="delete(item)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #empty>
+    <p class="empty">No hay items aún. Creá el primero arriba.</p>
+  </ng-template>
+</div>
+

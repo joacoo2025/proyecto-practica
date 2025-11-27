@@ -5,7 +5,7 @@ import { CarritoService } from '../../servicio/carrito.service';
 import { Producto } from '../../model/producto.model';
 import { FavoritoService } from '../../servicio/favorito.service';
 import { CurrencyPipe } from '@angular/common';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-productos',
   imports: [NgFor,FormsModule,NgIf,CurrencyPipe],
@@ -71,10 +71,41 @@ export class ProductosComponent {
   
   agregar(producto:Producto){
     this.carritoService.agregarCarrito(producto)
-    alert('Producto Agregado al carrito')
+    Swal.fire({
+    title: '¡Producto agregado!',
+    html: `El artículo <b>${producto.nombre}</b> fue añadido al Carrito.`,
+    icon: 'success',
+    customClass: {
+      popup: 'petshop-popup'
+    },
+    confirmButtonText: '¡Genial!',
+    showConfirmButton: true,
+    backdrop: `
+      rgba(19, 15, 15, 0.29)
+      url("https://i.imgur.com/J1pWJtO.png") 
+      left top
+      no-repeat
+    `
+  });
   }
   agregarFav(producto:Producto){
     this.favoritoService.agregarFavorito(producto)
-    alert('Producto Agregado a Favorito')
+   this.favoritoService.agregarFavorito(producto);
+    Swal.fire({
+    title: '¡Producto agregado!',
+    html: `El artículo <b>${producto.nombre}</b> fue añadido a favoritos.`,
+    icon: 'success',
+    customClass: {
+      popup: 'petshop-popup'
+    },
+    confirmButtonText: '¡Genial!',
+    showConfirmButton: true,
+    backdrop: `
+      rgba(19, 15, 15, 0.29)
+      url("https://i.imgur.com/J1pWJtO.png") 
+      left top
+      no-repeat
+    `
+  });
   }
 }

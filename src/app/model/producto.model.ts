@@ -5,6 +5,7 @@ export interface Producto{
     descripcion: string;
     precio:number;
     imagen:string;
-    disponible:boolean;
+    disponible?:boolean;
     cantidad?:number;
+    categoria?:string;
 }

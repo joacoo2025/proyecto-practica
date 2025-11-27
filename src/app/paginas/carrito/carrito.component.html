@@ -62,6 +62,7 @@
             <td class="product-name">{{ item.producto.nombre }}</td>
             <td class="product-description">{{ item.producto.descripcion }}</td>
             <td class="product-price">{{ item.producto.precio | currency:'ARS':'symbol':'1.0-0' }}</td>
+            <br>
             <td class="product-quantity">
               <button (click)="quitarCantidad(i)" aria-label="Disminuir cantidad" class="qty-btn">-</button>
               <span class="qty-number">{{ item.cantidad }}</span>

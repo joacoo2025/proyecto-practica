@@ -4,25 +4,28 @@ import { CarritoService } from '../../servicio/carrito.service';
 import { Producto } from '../../model/producto.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { OnInit } from '@angular/core';
+import { AuthService } from '../../servicio/auth.service';
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, CommonModule,RouterModule],
+  imports: [RouterLink, CommonModule,RouterModule, FormsModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
-  cantidadProductos:number=0;
-  constructor(private carritoService:CarritoService){
+export class NavbarComponent implements OnInit {
 
+  constructor(public auth: AuthService) {}
+
+  ngOnInit(): void {
+    // Mantengo la suscripción por si tu servicio la necesita.
+    this.auth.loginEvent.subscribe(() => {
+      // Ya no se asignan variables porque el HTML usa auth.xxx directamente
+    });
   }
-  ngOnInit():void{
-    this.carritoService.carrito$.subscribe((productos: {producto:Producto,cantidad:number}[])=>{
-      this.cantidadProductos=productos.reduce((total,item)=>total+item.cantidad,0)
-    })
-  }
-  onCarritoClick(){
-    console.log("Carrito Clicked")
+
+  logout() {
+    this.auth.logout();
+    // No se actualizan variables porque ya no existen.
   }
 
   

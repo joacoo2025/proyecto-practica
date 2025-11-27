@@ -1,115 +1,117 @@
-<!--<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/inicio"><i class="fa-solid fa-house"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/productos">Productos
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/contacto"><i class="fa-solid fa-circle-user"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/productos"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/carrito">Carro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/ofertas">Ofertas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/quien">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/favorito">Favoritos</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>-->
-
-  
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
   <div class="container-fluid">
-    
-    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/inicio" aria-label="Inicio">
-      <i class="fa-solid fa-house"></i>
-      <span class="fw-bold">Gol Autentico</span>
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4" routerLink="/inicio">
+      <i class="fa-solid fa-futbol fs-4"></i> Gol Autentico
     </a>
 
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- TOGGLE -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    
-    <div class="collapse navbar-collapse" id="navbarMenu">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex gap-3">
-        
+    <div class="collapse navbar-collapse" id="navMenu">
+
+      <!-- IZQUIERDA: MENÚ -->
+      <ul class="navbar-nav d-flex align-items-center gap-3 me-auto">
+
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/productos']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" aria-label="Productos">
-            Productos
-          </a>
-        </li>
-
-        
-        <li class="nav-item" title="Contacto">
-          <a class="nav-link" [routerLink]="['/contacto']" aria-label="Contacto">
-            <i class="fa-solid fa-circle-user fs-5"></i>
-          </a>
-        </li>
-
-        
-        <li class="nav-item" title="Carrito">
-          <a class="nav-link" [routerLink]="['/carrito']" aria-label="Carrito">
-            <i class="fa-solid fa-cart-shopping fs-5"></i>
-          </a>
-        </li>
-
-        
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/ofertas']" aria-label="Ofertas">
-            Ofertas
-          </a>
+          <a class="nav-link" routerLink="/tienda">Productos</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/compra']" aria-label="Compras">
-            Compras
-          </a>
-        </li>
-        
-        <li class="nav-item" title="Nosotros">
-          <a class="nav-link" [routerLink]="['/quien']" aria-label="Nosotros">
-            <i class="fa-solid fa-users fs-5"></i>
-          </a>
+          <a class="nav-link" routerLink="/ofertas">Ofertas</a>
         </li>
 
-        
-        <li class="nav-item" title="Favoritos">
-          <a class="nav-link" [routerLink]="['/favorito']" aria-label="Favoritos">
-            <i class="fa-solid fa-heart fs-5"></i>
+        <!-- DROPDOWN USUARIO (Contacto + Nosotros) -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-user fs-5"></i>
           </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" routerLink="/contacto">Contacto</a></li>
+            <li><a class="dropdown-item" routerLink="/quien">Nosotros</a></li>
+          </ul>
         </li>
+
       </ul>
 
-      
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Buscar">
-        <button class="btn btn-outline-light" type="submit">Buscar</button>
+      <!-- CENTRO: BUSCADOR -->
+      <form class="d-flex mx-auto w-50 my-3 my-lg-0" role="search">
+        <input class="form-control rounded-pill px-3" type="search" placeholder="Buscar productos...">
       </form>
-    </div>
+
+      <!-- DERECHA: ICONOS + LOGIN -->
+<ul class="navbar-nav ms-auto d-flex align-items-center gap-3">
+
+  <!-- Favoritos -->
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/favorito">
+      <i class="fa-solid fa-heart fs-5"></i>
+    </a>
+  </li>
+
+  <!-- Carrito -->
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/carrito">
+      <i class="fa-solid fa-cart-shopping fs-5"></i>
+    </a>
+  </li>
+
+  <!-- CRUD (solo visible si es admin) -->
+<li class="nav-item mx-2" *ngIf="auth.esAdmin()">
+  <a class="nav-link fw-semibold nav-link-custom" routerLink="/crud">CRUD</a>
+</li>
+
+  
+<nav class="navbar navbar-expand-lg navbar-bottom-custom bg-transparent border-0 shadow-none">
+  <div class="container-fluid justify-content-end">
+    
+    <ul class="navbar-nav d-flex flex-row gap-4 me-3">
+
+      <!-- INICIAR SESIÓN -->
+      <li class="nav-item" *ngIf="!auth.isLoggedIn()">
+        <a 
+          class="nav-link fw-semibold text-white-50 hover-text-white px-2"
+          routerLink="/login"
+          style="transition: .2s;"
+        >
+          <i class="bi bi-person-circle me-1"></i> Iniciar sesión
+        </a>
+      </li>
+
+      <!-- REGISTRARSE -->
+      <li class="nav-item" *ngIf="!auth.isLoggedIn()">
+        <a 
+          class="nav-link fw-bold text-warning px-3"
+          routerLink="/registro"
+          style="transition:.2s;"
+        >
+          <i class="bi bi-person-plus-fill me-1"></i> Registrarse
+        </a>
+      </li>
+
+      <!-- CERRAR SESIÓN -->
+      <li class="nav-item" *ngIf="auth.isLoggedIn()">
+        <a 
+          class="nav-link fw-semibold text-white-50 hover-text-white px-2"
+          (click)="logout()"
+          style="transition:.2s;"
+        >
+          <i class="bi bi-box-arrow-right me-1"></i> Cerrar sesión
+        </a>
+      </li>
+
+    </ul>
+
   </div>
 </nav>
 
 
+
+</ul>
+
+    </div>
+  </div>
+</nav>

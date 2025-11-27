@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 @Component({
   selector: 'app-ofertas',
-  imports: [FormsModule,CommonModule, CurrencyPipe],
+  imports: [FormsModule,CommonModule],
   templateUrl: './ofertas.component.html',
   styleUrl: './ofertas.component.css'
 })

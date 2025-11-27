@@ -1,0 +1,29 @@
+<div class="transferencia-container text-center">
+  <h2>Datos para Transferencia</h2>
+
+  <p><strong>Subtotal de tu compra:</strong> {{ subtotal | currency:'ARS':'symbol' }}</p>
+
+  <p><strong>Titular:</strong> {{ titular }}</p>
+  <p><strong>Alias:</strong> {{ alias }}</p>
+  <p><strong>CBU:</strong> {{ cbu }}</p>
+
+  <div class="qr-container">
+    <img [src]="qr" alt="QR para transferencia" class="qr-img" />
+  </div>
+
+  <p class="mensaje">
+    Una vez realizada la transferencia, envía el comprobante por correo o WhatsApp.
+    ¡Gracias por tu compra!
+  </p>
+
+  <div class="contacto">
+    <h3>Enviar comprobante a:</h3>
+    <p><strong>WhatsApp:</strong> {{ whatsapp }}</p>
+    <p><strong>Email:</strong> {{ gmail }}</p>
+  </div>
+
+ <div class="text-center mt-4">
+  <button class="btn-finalizar" (click)="finalizar()">Finalizar y Generar PDF</button>
+</div>
+
+</div>

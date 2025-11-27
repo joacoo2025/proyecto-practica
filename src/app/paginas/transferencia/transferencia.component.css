@@ -1,0 +1,93 @@
+/* CONTENEDOR GENERAL */
+.transferencia-container {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #1a1a1d; /* gris oscuro premium */
+  border: 1px solid #2a2a2d;
+  border-radius: 14px;
+  color: #e5e5e5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+/* TITULOS */
+.transferencia-container h2 {
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.transferencia-container h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #f1f1f1;
+  font-size: 1.3rem;
+}
+
+/* TEXTO GENERAL */
+.transferencia-container p {
+  font-size: 1.05rem;
+  margin: 8px 0;
+  color: #cfcfcf;
+}
+
+.transferencia-container strong {
+  color: #ffffff;
+}
+
+/* QR */
+.qr-container {
+  margin: 25px auto;
+  padding: 15px;
+  background: #121214; 
+  border: 1px solid #2e2e31;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.qr-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* MENSAJE */
+.mensaje {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #bcbcbc;
+  line-height: 1.4;
+  border-left: 3px solid #3a3a3f;
+  padding-left: 10px;
+}
+
+/* CONTACTO */
+.contacto p strong {
+  color: #ffd369; /* detalle elegante */
+}
+
+.contacto p {
+  font-size: 1.05rem;
+  margin-bottom: 5px;
+}
+.btn-finalizar {
+  background: linear-gradient(180deg, #2b2b2b, #1a1a1a);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-finalizar:hover {
+  background: linear-gradient(180deg, #3a3a3a, #222);
+  transform: translateY(-2px);
+}
+

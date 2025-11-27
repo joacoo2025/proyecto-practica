@@ -5,6 +5,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CarritoComponent } from '../carrito/carrito.component';
 import { CarritoService } from '../../servicio/carrito.service';
 import jsPDF from 'jspdf';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-compra',
@@ -31,7 +32,8 @@ export class CompraComponent implements OnInit{
   constructor(
     private fb : FormBuilder, 
     private carritoService: CarritoService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private router: Router,
   ){}
   //metodo que se ejecuta al iniciar el componente
   ngOnInit(): void {
@@ -54,6 +56,13 @@ export class CompraComponent implements OnInit{
     this.total=subtotal+this.envio
     return this.total
   }
+  verificarMetodoPago() {
+  const metodo = this.formularioCompra.get('metodoPago')?.value;
+
+  if (metodo === 'transferencia') {
+    this.router.navigate(['/transferencia']);
+  }
+}
   emitirFactura():void{
     const datosCliente = this.formularioCompra.value;
     const productos=this.carritoService.obtenerProductos();

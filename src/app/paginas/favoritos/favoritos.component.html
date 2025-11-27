@@ -1,0 +1,29 @@
+<section class="favoritos-section">
+  <h1 class="favoritos-title">Productos en Favoritos</h1>
+
+  <div *ngIf="productosFav.length === 0" class="sin-productos">
+    <p>No hay productos en esta sección.</p>
+  </div>
+
+  <div class="favoritos-container" *ngIf="productosFav.length > 0">
+    <div *ngFor="let producto of productosFav" class="favorito-card">
+      <img
+        [src]="producto.producto.imagen"
+        alt="{{ producto.producto.nombre }}"
+        class="favorito-img"
+      />
+      <h5>{{ producto.producto.nombre }}</h5>
+      <p class="precio">{{ producto.producto.precio | currency:'$' }}</p>
+
+      <div class="botones-card">
+        <button class="btn-agregar" (click)="agregarCarro(producto.producto)">
+          <i class="fas fa-shopping-cart"></i> Añadir al carrito
+        </button>
+        <br><br>
+        <button class="btn-eliminar" (click)="eliminarProducto(producto.producto.id)">
+          <i class="fas fa-trash-alt"></i> Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

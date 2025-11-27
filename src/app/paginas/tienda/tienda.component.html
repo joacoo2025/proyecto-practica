@@ -1,0 +1,27 @@
+<div class="tienda-container">
+  <h2 style="text-align: center;">PRODUCTOS</h2> <br>
+
+  <div class="grid">
+    <div class="card" *ngFor="let p of productos">
+
+      <img *ngIf="p.imagen" [src]="p.imagen" class="card-img" alt="{{ p.nombre }}" />
+
+      <div class="card-body">
+        <h3>{{ p.nombre }}</h3>
+        <p class="descripcion">{{ p.descripcion }}</p>
+
+        <p class="precio">
+          $ {{ p.precio | number:'1.2-2' }}
+        </p>
+
+        <button class="btn-comprar" (click)="agregar(p)">Agregar al carrito</button>
+         <button class="btn fav-btn position-absolute top-0 end-0 m-2 p-1" (click)="agregarFav(p)" title="Favorito">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 17.503 15.625" fill="#ff5e5e">
+                  <path d="M8.752,15.625h0L1.383,8.162a4.824,4.824,0,0,1,0-6.762,4.679,4.679,0,0,1,6.674,0l.694.7.694-.7a4.678,4.678,0,0,1,6.675,0,4.825,4.825,0,0,1,0,6.762L8.752,15.624Z"></path>
+                </svg>
+         </button>
+      </div>
+
+    </div>
+  </div>
+</div>

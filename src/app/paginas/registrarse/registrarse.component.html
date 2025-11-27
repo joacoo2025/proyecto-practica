@@ -1,0 +1,114 @@
+<div class="registro-container">
+  <div class="registro-card">
+    <h2 class="titulo">Registrarse</h2>
+
+    <form (ngSubmit)="registrar()">
+
+      <div class="fila">
+        <div class="campo">
+          <label>Nombre</label>
+          <input
+            type="text"
+            placeholder="Ingresá tu nombre"
+            name="nombre"
+            [(ngModel)]="nuevoUsuario.nombre"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label>Apellido</label>
+          <input
+            type="text"
+            placeholder="Ingresá tu apellido"
+            name="apellido"
+            [(ngModel)]="nuevoUsuario.apellido"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="fila">
+        <div class="campo">
+          <label>Gmail</label>
+          <input
+            type="email"
+            placeholder="ejemplo@gmail.com"
+            name="email"
+            [(ngModel)]="nuevoUsuario.email"
+            required
+          />
+        </div>
+
+        <div class="campo">
+          <label>Dirección</label>
+          <input
+            type="text"
+            placeholder="Calle y número"
+            name="direccion"
+            [(ngModel)]="nuevoUsuario.direccion"
+          />
+        </div>
+      </div>
+
+      <div class="fila">
+        <div class="campo centrado">
+          <label>N° de Teléfono</label>
+          <input
+            type="tel"
+            placeholder="(011) 1234-5678"
+            name="telefono"
+            [(ngModel)]="nuevoUsuario.telefono"
+          />
+        </div>
+      </div>
+
+      
+
+      <div class="fila">
+        <div class="campo">
+          <label>Nombre de Usuario</label>
+          <input
+            type="text"
+            placeholder="Elige tu usuario"
+            name="usuario"
+            [(ngModel)]="nuevoUsuario.usuario"
+          />
+        </div>
+
+        <div class="campo">
+          <label>Contraseña</label>
+          <input
+            type="password"
+            placeholder="••••••••"
+            name="password"
+            [(ngModel)]="nuevoUsuario.password"
+            minlength="4"
+            required
+          />
+          <small class="form-text">Mínimo 4 caracteres.</small>
+        </div>
+      </div>
+
+      <div class="boton-contenedor">
+        <button type="submit" class="btn-registrar">Crear cuenta</button>
+      </div>
+
+      <!-- Error -->
+      <p *ngIf="error" class="text-danger text-center mt-3">
+        {{ error }}
+      </p>
+
+    </form>
+
+    <!-- Enlace a iniciar sesión -->
+    <div class="text-center mt-3">
+      <small>
+        ¿Ya tenés cuenta?
+        <a href="login">Iniciá sesión</a>
+      </small>
+    </div>
+
+  </div>
+</div>
+

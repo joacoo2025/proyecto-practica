@@ -227,18 +227,28 @@
         </div>
 
         <div class="mb-3">
-            <label for="metodoPago" class=" form-label fw-semibold">Metodo de Pago <span
-                    class="text-danger">*</span></label>
-            <select id="metodoPago" formControlName="metodoPago" class="form-select">
-                <option value="" disabled selected>Seleccione metodo de pago</option>
-                <option value="tarjeta">Tarjeta de Credito/Debito</option>
-                <option value="efectivo">Efectivo</option>
-                <option value="transferencia">Transferencia</option>
-            </select>
-            <div *ngIf="formularioCompra.get('metodoPago')?.touched && formularioCompra.get('metodoPago')?.invalid"
-                class="form-text text-danger">
-                Debes seleccionar un metodo de pago
-            </div>
+            <label for="metodoPago" class="form-label fw-semibold">
+  Método de Pago <span class="text-danger">*</span>
+</label>
+
+<select 
+  id="metodoPago" 
+  formControlName="metodoPago" 
+  class="form-select"
+  (change)="verificarMetodoPago()"
+>
+  <option value="" disabled selected>Seleccione método de pago</option>
+  <option value="efectivo">Efectivo</option>
+  <option value="transferencia">Transferencia</option>
+</select>
+
+<div 
+  *ngIf="formularioCompra.get('metodoPago')?.touched && formularioCompra.get('metodoPago')?.invalid"
+  class="form-text text-danger"
+>
+  Debes seleccionar un método de pago
+</div>
+
 
         </div>
         <div class="d-flex justify-content-between align-items-center my-4">

@@ -1,71 +1,168 @@
+/* ===========================================
+   NAVBAR PREMIUM OSCURA (ESTILO PRO)
+   =========================================== */
 
-/* Estilos generales del Navbar */
+/* Fondo principal con efecto sutil de glass */
 .navbar {
-  border-bottom: 2px solid #444; /* Sutil borde en la parte inferior */
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 1rem;
+  transition: all 0.3s ease;
 }
 
-/* Fondo oscuro de la Navbar */
+/* Links del navbar */
 .navbar-dark .navbar-nav .nav-link {
-  color: #b0b0b0; /* Color gris claro para los enlaces */
-  transition: color 0.3s ease; /* Efecto de transición para hover */
+  color: #c8c8c8;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 8px 14px;
+  transition: all 0.25s ease;
 }
 
-/* Hover y estado activo */
+/* Hover */
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #fff; /* Blanco cuando se pasa el mouse por encima */
-  background-color: #333; /* Fondo oscuro para hover */
-  border-radius: 4px; /* Bordes redondeados en el hover */
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
 }
 
-/* Enlace activo */
+/* Activo */
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff; /* Color blanco para el enlace activo */
-  background-color: #444; /* Fondo más oscuro para el enlace activo */
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.08);
 }
 
-/* Estilos del botón de búsqueda */
+/* Íconos */
+.navbar-nav i {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navbar-nav i:hover {
+  transform: scale(1.15);
+  color: #ffffff;
+}
+
+/* ===========================================
+   BUSCADOR
+   =========================================== */
+
 .form-control {
-  border-radius: 20px; /* Bordes redondeados para el campo de búsqueda */
-  background-color: #333; /* Fondo oscuro */
-  color: #fff; /* Texto blanco */
-  border: none; /* Sin borde */
+  border-radius: 30px;
+  background: #1e1e1e;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 8px 16px;
+  transition: all 0.25s ease;
 }
 
-/* Estilo del botón de búsqueda */
+.form-control:focus {
+  background: #2b2b2b;
+  border-color: #777;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+/* Ajustar ancho del buscador en el navbar */
+.navbar form {
+  width: 35% !important;   /* Antes 50%, ahora más compacto */
+  min-width: 220px;        /* Para que no quede demasiado chico en pantallas chicas */
+}
+
+
+/* Botón buscar */
 .btn-outline-light {
-  border-color: #fff; /* Borde blanco */
-  color: #fff; /* Texto blanco */
-  background-color: transparent; /* Fondo transparente */
-  border-radius: 20px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 30px;
+  padding: 6px 18px;
+  border: 1px solid #bbb;
+  color: #f0f0f0;
+  transition: all 0.25s ease;
 }
 
 .btn-outline-light:hover {
-  background-color: #555; /* Fondo oscuro al hacer hover */
-  color: #fff; /* Texto blanco */
+  background: #f0f0f0;
+  color: #000;
+  border-color: transparent;
 }
 
-/* Estilo para el botón del menú */
+/* ===========================================
+   TOGGLER (MÓVIL)
+   =========================================== */
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
 .navbar-toggler-icon {
-  background-color: #fff; /* Íconos blancos en el botón de menú */
+  filter: brightness(0) invert(1); /* Blanco elegante */
 }
 
-/* Fondo oscuro para los elementos del menú */
-.navbar-dark {
-  background-color: #222; /* Fondo aún más oscuro para el navbar */
-}
+/* ===========================================
+   VERSIÓN MÓVIL
+   =========================================== */
 
-/* Ajustes de la barra de navegación en móviles */
 @media (max-width: 768px) {
-  .navbar-nav {
-    background-color: #333; /* Fondo oscuro en la versión móvil */
+  .navbar-collapse {
+    background: rgba(15, 15, 15, 0.95);
+    padding: 15px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
   }
 
-  .nav-item {
-    border-bottom: 1px solid #444; /* Separadores entre los elementos del menú */
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 6px;
   }
 
-  .nav-link {
-    padding: 10px 15px; /* Más espacio en los enlaces del menú */
+  .navbar-nav .nav-link {
+    padding: 12px 10px;
+    font-size: 1.05rem;
   }
+}
+.hover-text-white:hover {
+  color: white !important;
+}
+
+.navbar .nav-link {
+  font-size: 1rem;
+  letter-spacing: .3px;
+}
+
+.navbar .nav-link:hover {
+  opacity: .9;
+  transform: translateY(-1px);
+}
+/* Asegurar que el navbar esté siempre por encima del carrusel */
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Si el dropdown sigue quedando atrás */
+.dropdown-menu {
+  position: absolute;
+  z-index: 2000; /* Aún más alto */
+}
+.navbar-bottom-custom {
+  background: transparent !important; /* Sin fondo */
+  box-shadow: none !important;
+  padding: 0.6rem 0;
+}
+
+.navbar-bottom-custom .nav-link {
+  font-size: 0.95rem;
+  letter-spacing: .3px;
+}
+
+.hover-text-white:hover {
+  color: #fff !important;
+}
+
+/* Transiciones suaves */
+.navbar-bottom-custom .nav-link {
+  transition: color .25s ease;
 }
